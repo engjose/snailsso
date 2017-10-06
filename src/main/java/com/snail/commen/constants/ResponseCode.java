@@ -1,4 +1,4 @@
-package com.snail.commen;
+package com.snail.commen.constants;
 
 /**
  * Created by panyuanyuan on 2017/6/13.
@@ -6,16 +6,16 @@ package com.snail.commen;
 public enum  ResponseCode {
 
     /** 成功的响应码 */
-    SUCCESS(200, "SUCCESS"),
+    SUCCESS(200, "成功"),
 
     /** 请求失败响应码 */
-    ERROR(500, "ERROR"),
+    ERROR(500, "发生错误"),
 
     /** 需要登录响应码 */
-    NEED_LOGIN(403, "NEED_LOGIN"),
+    NEED_LOGIN(403, "无权限"),
 
     /** 参数异常响应码 */
-    ILLEGAL_ARGUMENT(405, "ILLEGAL_ARGUMENT");
+    ILLEGAL_ARGUMENT(405, "参数有误");
 
     private final Integer code;
     private final String description;
