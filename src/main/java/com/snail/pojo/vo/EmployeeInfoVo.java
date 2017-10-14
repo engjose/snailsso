@@ -38,4 +38,5 @@ public class EmployeeInfoVo {
 
     /** 性别 */
     private String gender;
+
 }

@@ -1,10 +1,17 @@
 package com.snail.controller.backend;
 
+import com.snail.common.constants.ResponseCode;
 import com.snail.common.constants.ResultMap;
 import com.snail.pojo.form.EmployeeForm;
+import com.snail.pojo.vo.EmployeeInfoVo;
+import com.snail.service.base.IUserManagerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 用户管理,包括员工管理Controller
@@ -13,18 +20,24 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/employee")
-public class UserManagerController {
+public class UserManageController {
 
+    @Autowired
+    private IUserManagerService iUserManagerService;
     /**
      * 查询员工列表
      *
-     * @param form
-     * @return
+     * @param form 查询条件
+     * @return 返回结果
      */
     @RequestMapping(value = "/employees", method = RequestMethod.GET)
-    public ResultMap getEmployees(EmployeeForm form) {
-        return null;
+    public Map<String, Object> getEmployees(EmployeeForm form) {
+        return iUserManagerService.listEmployees(form);
     }
+
+    /**
+     * TODO 员工详情查询
+     */
 
 
 }

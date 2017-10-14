@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/snail/web")
-public class UserManagerController {
+public class UserController {
 
     @Autowired
     private UserManageService userManageService;
