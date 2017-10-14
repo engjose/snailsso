@@ -28,7 +28,7 @@ public class EmployeeInfoVo {
     private String name;
 
     /** 级别 */
-    private String level;
+    private Integer level;
 
     /** 职位 */
     private String position;

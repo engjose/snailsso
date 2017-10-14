@@ -6,6 +6,7 @@ import com.snail.pojo.form.EmployeeForm;
 import com.snail.pojo.vo.EmployeeInfoVo;
 import com.snail.service.base.IUserManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +32,7 @@ public class UserManageController {
      * @param form 查询条件
      * @return 返回结果
      */
+    @CrossOrigin
     @RequestMapping(value = "/employees", method = RequestMethod.GET)
     public Map<String, Object> getEmployees(EmployeeForm form) {
         return iUserManagerService.listEmployees(form);
