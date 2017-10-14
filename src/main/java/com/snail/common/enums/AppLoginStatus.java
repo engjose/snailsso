@@ -1,4 +1,4 @@
-package com.snail.commen.enums;
+package com.snail.common.enums;
 
 /**
  * 登录状态

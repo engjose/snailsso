@@ -1,4 +1,4 @@
-package com.snail.commen.constants;
+package com.snail.common.constants;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;

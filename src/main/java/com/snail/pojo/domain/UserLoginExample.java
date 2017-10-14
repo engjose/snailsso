@@ -465,52 +465,52 @@ public class UserLoginExample {
             return (Criteria) this;
         }
 
-        public Criteria andUserStatusEqualTo(Byte value) {
+        public Criteria andUserStatusEqualTo(Integer value) {
             addCriterion("`user_status` =", value, "userStatus");
             return (Criteria) this;
         }
 
-        public Criteria andUserStatusNotEqualTo(Byte value) {
+        public Criteria andUserStatusNotEqualTo(Integer value) {
             addCriterion("`user_status` <>", value, "userStatus");
             return (Criteria) this;
         }
 
-        public Criteria andUserStatusGreaterThan(Byte value) {
+        public Criteria andUserStatusGreaterThan(Integer value) {
             addCriterion("`user_status` >", value, "userStatus");
             return (Criteria) this;
         }
 
-        public Criteria andUserStatusGreaterThanOrEqualTo(Byte value) {
+        public Criteria andUserStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("`user_status` >=", value, "userStatus");
             return (Criteria) this;
         }
 
-        public Criteria andUserStatusLessThan(Byte value) {
+        public Criteria andUserStatusLessThan(Integer value) {
             addCriterion("`user_status` <", value, "userStatus");
             return (Criteria) this;
         }
 
-        public Criteria andUserStatusLessThanOrEqualTo(Byte value) {
+        public Criteria andUserStatusLessThanOrEqualTo(Integer value) {
             addCriterion("`user_status` <=", value, "userStatus");
             return (Criteria) this;
         }
 
-        public Criteria andUserStatusIn(List<Byte> values) {
+        public Criteria andUserStatusIn(List<Integer> values) {
             addCriterion("`user_status` in", values, "userStatus");
             return (Criteria) this;
         }
 
-        public Criteria andUserStatusNotIn(List<Byte> values) {
+        public Criteria andUserStatusNotIn(List<Integer> values) {
             addCriterion("`user_status` not in", values, "userStatus");
             return (Criteria) this;
         }
 
-        public Criteria andUserStatusBetween(Byte value1, Byte value2) {
+        public Criteria andUserStatusBetween(Integer value1, Integer value2) {
             addCriterion("`user_status` between", value1, value2, "userStatus");
             return (Criteria) this;
         }
 
-        public Criteria andUserStatusNotBetween(Byte value1, Byte value2) {
+        public Criteria andUserStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("`user_status` not between", value1, value2, "userStatus");
             return (Criteria) this;
         }

@@ -475,52 +475,52 @@ public class EmployeeExample {
             return (Criteria) this;
         }
 
-        public Criteria andLevelEqualTo(Byte value) {
+        public Criteria andLevelEqualTo(Integer value) {
             addCriterion("`level` =", value, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelNotEqualTo(Byte value) {
+        public Criteria andLevelNotEqualTo(Integer value) {
             addCriterion("`level` <>", value, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelGreaterThan(Byte value) {
+        public Criteria andLevelGreaterThan(Integer value) {
             addCriterion("`level` >", value, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelGreaterThanOrEqualTo(Byte value) {
+        public Criteria andLevelGreaterThanOrEqualTo(Integer value) {
             addCriterion("`level` >=", value, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelLessThan(Byte value) {
+        public Criteria andLevelLessThan(Integer value) {
             addCriterion("`level` <", value, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelLessThanOrEqualTo(Byte value) {
+        public Criteria andLevelLessThanOrEqualTo(Integer value) {
             addCriterion("`level` <=", value, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelIn(List<Byte> values) {
+        public Criteria andLevelIn(List<Integer> values) {
             addCriterion("`level` in", values, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelNotIn(List<Byte> values) {
+        public Criteria andLevelNotIn(List<Integer> values) {
             addCriterion("`level` not in", values, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelBetween(Byte value1, Byte value2) {
+        public Criteria andLevelBetween(Integer value1, Integer value2) {
             addCriterion("`level` between", value1, value2, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelNotBetween(Byte value1, Byte value2) {
+        public Criteria andLevelNotBetween(Integer value1, Integer value2) {
             addCriterion("`level` not between", value1, value2, "level");
             return (Criteria) this;
         }
@@ -885,52 +885,62 @@ public class EmployeeExample {
             return (Criteria) this;
         }
 
-        public Criteria andMobileEqualTo(Integer value) {
+        public Criteria andMobileEqualTo(String value) {
             addCriterion("`mobile` =", value, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileNotEqualTo(Integer value) {
+        public Criteria andMobileNotEqualTo(String value) {
             addCriterion("`mobile` <>", value, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileGreaterThan(Integer value) {
+        public Criteria andMobileGreaterThan(String value) {
             addCriterion("`mobile` >", value, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileGreaterThanOrEqualTo(Integer value) {
+        public Criteria andMobileGreaterThanOrEqualTo(String value) {
             addCriterion("`mobile` >=", value, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileLessThan(Integer value) {
+        public Criteria andMobileLessThan(String value) {
             addCriterion("`mobile` <", value, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileLessThanOrEqualTo(Integer value) {
+        public Criteria andMobileLessThanOrEqualTo(String value) {
             addCriterion("`mobile` <=", value, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileIn(List<Integer> values) {
+        public Criteria andMobileLike(String value) {
+            addCriterion("`mobile` like", value, "mobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andMobileNotLike(String value) {
+            addCriterion("`mobile` not like", value, "mobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andMobileIn(List<String> values) {
             addCriterion("`mobile` in", values, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileNotIn(List<Integer> values) {
+        public Criteria andMobileNotIn(List<String> values) {
             addCriterion("`mobile` not in", values, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileBetween(Integer value1, Integer value2) {
+        public Criteria andMobileBetween(String value1, String value2) {
             addCriterion("`mobile` between", value1, value2, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileNotBetween(Integer value1, Integer value2) {
+        public Criteria andMobileNotBetween(String value1, String value2) {
             addCriterion("`mobile` not between", value1, value2, "mobile");
             return (Criteria) this;
         }

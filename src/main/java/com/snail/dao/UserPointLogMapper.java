@@ -51,8 +51,8 @@ public interface UserPointLogMapper {
         "`change_pint`, `create_time`, ",
         "`update_time`, `app`)",
         "values (#{pointLogId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, ",
-        "#{source,jdbcType=TINYINT}, #{transSerial,jdbcType=INTEGER}, ",
-        "#{changePint,jdbcType=SMALLINT}, #{createTime,jdbcType=TIMESTAMP}, ",
+        "#{source,jdbcType=INTEGER}, #{transSerial,jdbcType=INTEGER}, ",
+        "#{changePint,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, ",
         "#{updateTime,jdbcType=TIMESTAMP}, #{app,jdbcType=VARCHAR})"
     })
     int insert(UserPointLog record);
@@ -122,9 +122,9 @@ public interface UserPointLogMapper {
     @Update({
         "update `user_point_log`",
         "set `user_id` = #{userId,jdbcType=INTEGER},",
-          "`source` = #{source,jdbcType=TINYINT},",
+          "`source` = #{source,jdbcType=INTEGER},",
           "`trans_serial` = #{transSerial,jdbcType=INTEGER},",
-          "`change_pint` = #{changePint,jdbcType=SMALLINT},",
+          "`change_pint` = #{changePint,jdbcType=INTEGER},",
           "`create_time` = #{createTime,jdbcType=TIMESTAMP},",
           "`update_time` = #{updateTime,jdbcType=TIMESTAMP},",
           "`app` = #{app,jdbcType=VARCHAR}",

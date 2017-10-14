@@ -52,7 +52,7 @@ public interface UserLoginMapper {
         "`update_time`)",
         "values (#{loginId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, ",
         "#{loginName,jdbcType=VARCHAR}, #{password,jdbcType=CHAR}, ",
-        "#{userStatus,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, ",
+        "#{userStatus,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, ",
         "#{updateTime,jdbcType=TIMESTAMP})"
     })
     int insert(UserLogin record);
@@ -124,7 +124,7 @@ public interface UserLoginMapper {
         "set `user_id` = #{userId,jdbcType=INTEGER},",
           "`login_name` = #{loginName,jdbcType=VARCHAR},",
           "`password` = #{password,jdbcType=CHAR},",
-          "`user_status` = #{userStatus,jdbcType=TINYINT},",
+          "`user_status` = #{userStatus,jdbcType=INTEGER},",
           "`create_time` = #{createTime,jdbcType=TIMESTAMP},",
           "`update_time` = #{updateTime,jdbcType=TIMESTAMP}",
         "where `login_id` = #{loginId,jdbcType=INTEGER}"

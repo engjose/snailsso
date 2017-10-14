@@ -9,15 +9,15 @@
     <constructor >
       <idArg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="identity_card_type" jdbcType="TINYINT" javaType="java.lang.Byte" />
+      <arg column="identity_card_type" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="identity_card_no" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="mobile" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="mobile" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="gender" jdbcType="CHAR" javaType="java.lang.String" />
       <arg column="point" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="register_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="birthday" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="user_level" jdbcType="TINYINT" javaType="java.lang.Byte" />
+      <arg column="user_level" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="account_money" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
       <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
@@ -188,13 +188,13 @@
         #{userName,jdbcType=VARCHAR},
       </if>
       <if test="identityCardType != null" >
-        #{identityCardType,jdbcType=TINYINT},
+        #{identityCardType,jdbcType=INTEGER},
       </if>
       <if test="identityCardNo != null" >
         #{identityCardNo,jdbcType=VARCHAR},
       </if>
       <if test="mobile != null" >
-        #{mobile,jdbcType=INTEGER},
+        #{mobile,jdbcType=VARCHAR},
       </if>
       <if test="email != null" >
         #{email,jdbcType=VARCHAR},
@@ -212,7 +212,7 @@
         #{birthday,jdbcType=TIMESTAMP},
       </if>
       <if test="userLevel != null" >
-        #{userLevel,jdbcType=TINYINT},
+        #{userLevel,jdbcType=INTEGER},
       </if>
       <if test="accountMoney != null" >
         #{accountMoney,jdbcType=DECIMAL},
@@ -252,13 +252,13 @@
         `user_name` = #{record.userName,jdbcType=VARCHAR},
       </if>
       <if test="record.identityCardType != null" >
-        `identity_card_type` = #{record.identityCardType,jdbcType=TINYINT},
+        `identity_card_type` = #{record.identityCardType,jdbcType=INTEGER},
       </if>
       <if test="record.identityCardNo != null" >
         `identity_card_no` = #{record.identityCardNo,jdbcType=VARCHAR},
       </if>
       <if test="record.mobile != null" >
-        `mobile` = #{record.mobile,jdbcType=INTEGER},
+        `mobile` = #{record.mobile,jdbcType=VARCHAR},
       </if>
       <if test="record.email != null" >
         `email` = #{record.email,jdbcType=VARCHAR},
@@ -276,7 +276,7 @@
         `birthday` = #{record.birthday,jdbcType=TIMESTAMP},
       </if>
       <if test="record.userLevel != null" >
-        `user_level` = #{record.userLevel,jdbcType=TINYINT},
+        `user_level` = #{record.userLevel,jdbcType=INTEGER},
       </if>
       <if test="record.accountMoney != null" >
         `account_money` = #{record.accountMoney,jdbcType=DECIMAL},
@@ -303,15 +303,15 @@
     update `user`
     set `user_id` = #{record.userId,jdbcType=INTEGER},
       `user_name` = #{record.userName,jdbcType=VARCHAR},
-      `identity_card_type` = #{record.identityCardType,jdbcType=TINYINT},
+      `identity_card_type` = #{record.identityCardType,jdbcType=INTEGER},
       `identity_card_no` = #{record.identityCardNo,jdbcType=VARCHAR},
-      `mobile` = #{record.mobile,jdbcType=INTEGER},
+      `mobile` = #{record.mobile,jdbcType=VARCHAR},
       `email` = #{record.email,jdbcType=VARCHAR},
       `gender` = #{record.gender,jdbcType=CHAR},
       `point` = #{record.point,jdbcType=INTEGER},
       `register_time` = #{record.registerTime,jdbcType=TIMESTAMP},
       `birthday` = #{record.birthday,jdbcType=TIMESTAMP},
-      `user_level` = #{record.userLevel,jdbcType=TINYINT},
+      `user_level` = #{record.userLevel,jdbcType=INTEGER},
       `account_money` = #{record.accountMoney,jdbcType=DECIMAL},
       `create_time` = #{record.createTime,jdbcType=TIMESTAMP},
       `update_time` = #{record.updateTime,jdbcType=TIMESTAMP},
@@ -331,13 +331,13 @@
         `user_name` = #{userName,jdbcType=VARCHAR},
       </if>
       <if test="identityCardType != null" >
-        `identity_card_type` = #{identityCardType,jdbcType=TINYINT},
+        `identity_card_type` = #{identityCardType,jdbcType=INTEGER},
       </if>
       <if test="identityCardNo != null" >
         `identity_card_no` = #{identityCardNo,jdbcType=VARCHAR},
       </if>
       <if test="mobile != null" >
-        `mobile` = #{mobile,jdbcType=INTEGER},
+        `mobile` = #{mobile,jdbcType=VARCHAR},
       </if>
       <if test="email != null" >
         `email` = #{email,jdbcType=VARCHAR},
@@ -355,7 +355,7 @@
         `birthday` = #{birthday,jdbcType=TIMESTAMP},
       </if>
       <if test="userLevel != null" >
-        `user_level` = #{userLevel,jdbcType=TINYINT},
+        `user_level` = #{userLevel,jdbcType=INTEGER},
       </if>
       <if test="accountMoney != null" >
         `account_money` = #{accountMoney,jdbcType=DECIMAL},

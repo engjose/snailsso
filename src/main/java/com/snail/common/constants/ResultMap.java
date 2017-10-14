@@ -1,4 +1,4 @@
-package com.snail.commen.constants;
+package com.snail.common.constants;
 
 import java.io.Serializable;
 import org.codehaus.jackson.map.annotate.JsonSerialize;

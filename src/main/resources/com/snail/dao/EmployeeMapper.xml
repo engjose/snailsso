@@ -11,13 +11,13 @@
       <arg column="login_name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="password" jdbcType="CHAR" javaType="java.lang.String" />
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="level" jdbcType="TINYINT" javaType="java.lang.Byte" />
+      <arg column="level" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="position" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="icon_url" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="life_pic_url" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="introduction" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="motto" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="mobile" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="mobile" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="gender" jdbcType="CHAR" javaType="java.lang.String" />
       <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
@@ -194,7 +194,7 @@
         #{name,jdbcType=VARCHAR},
       </if>
       <if test="level != null" >
-        #{level,jdbcType=TINYINT},
+        #{level,jdbcType=INTEGER},
       </if>
       <if test="position != null" >
         #{position,jdbcType=VARCHAR},
@@ -212,7 +212,7 @@
         #{motto,jdbcType=VARCHAR},
       </if>
       <if test="mobile != null" >
-        #{mobile,jdbcType=INTEGER},
+        #{mobile,jdbcType=VARCHAR},
       </if>
       <if test="email != null" >
         #{email,jdbcType=VARCHAR},
@@ -258,7 +258,7 @@
         `name` = #{record.name,jdbcType=VARCHAR},
       </if>
       <if test="record.level != null" >
-        `level` = #{record.level,jdbcType=TINYINT},
+        `level` = #{record.level,jdbcType=INTEGER},
       </if>
       <if test="record.position != null" >
         `position` = #{record.position,jdbcType=VARCHAR},
@@ -276,7 +276,7 @@
         `motto` = #{record.motto,jdbcType=VARCHAR},
       </if>
       <if test="record.mobile != null" >
-        `mobile` = #{record.mobile,jdbcType=INTEGER},
+        `mobile` = #{record.mobile,jdbcType=VARCHAR},
       </if>
       <if test="record.email != null" >
         `email` = #{record.email,jdbcType=VARCHAR},
@@ -305,13 +305,13 @@
       `login_name` = #{record.loginName,jdbcType=VARCHAR},
       `password` = #{record.password,jdbcType=CHAR},
       `name` = #{record.name,jdbcType=VARCHAR},
-      `level` = #{record.level,jdbcType=TINYINT},
+      `level` = #{record.level,jdbcType=INTEGER},
       `position` = #{record.position,jdbcType=VARCHAR},
       `icon_url` = #{record.iconUrl,jdbcType=VARCHAR},
       `life_pic_url` = #{record.lifePicUrl,jdbcType=VARCHAR},
       `introduction` = #{record.introduction,jdbcType=VARCHAR},
       `motto` = #{record.motto,jdbcType=VARCHAR},
-      `mobile` = #{record.mobile,jdbcType=INTEGER},
+      `mobile` = #{record.mobile,jdbcType=VARCHAR},
       `email` = #{record.email,jdbcType=VARCHAR},
       `gender` = #{record.gender,jdbcType=CHAR},
       `create_time` = #{record.createTime,jdbcType=TIMESTAMP},
@@ -337,7 +337,7 @@
         `name` = #{name,jdbcType=VARCHAR},
       </if>
       <if test="level != null" >
-        `level` = #{level,jdbcType=TINYINT},
+        `level` = #{level,jdbcType=INTEGER},
       </if>
       <if test="position != null" >
         `position` = #{position,jdbcType=VARCHAR},
@@ -355,7 +355,7 @@
         `motto` = #{motto,jdbcType=VARCHAR},
       </if>
       <if test="mobile != null" >
-        `mobile` = #{mobile,jdbcType=INTEGER},
+        `mobile` = #{mobile,jdbcType=VARCHAR},
       </if>
       <if test="email != null" >
         `email` = #{email,jdbcType=VARCHAR},
