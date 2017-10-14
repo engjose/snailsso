@@ -325,52 +325,52 @@ public class UserPointLogExample {
             return (Criteria) this;
         }
 
-        public Criteria andSourceEqualTo(Byte value) {
+        public Criteria andSourceEqualTo(Integer value) {
             addCriterion("`source` =", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceNotEqualTo(Byte value) {
+        public Criteria andSourceNotEqualTo(Integer value) {
             addCriterion("`source` <>", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceGreaterThan(Byte value) {
+        public Criteria andSourceGreaterThan(Integer value) {
             addCriterion("`source` >", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceGreaterThanOrEqualTo(Byte value) {
+        public Criteria andSourceGreaterThanOrEqualTo(Integer value) {
             addCriterion("`source` >=", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceLessThan(Byte value) {
+        public Criteria andSourceLessThan(Integer value) {
             addCriterion("`source` <", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceLessThanOrEqualTo(Byte value) {
+        public Criteria andSourceLessThanOrEqualTo(Integer value) {
             addCriterion("`source` <=", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceIn(List<Byte> values) {
+        public Criteria andSourceIn(List<Integer> values) {
             addCriterion("`source` in", values, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceNotIn(List<Byte> values) {
+        public Criteria andSourceNotIn(List<Integer> values) {
             addCriterion("`source` not in", values, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceBetween(Byte value1, Byte value2) {
+        public Criteria andSourceBetween(Integer value1, Integer value2) {
             addCriterion("`source` between", value1, value2, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceNotBetween(Byte value1, Byte value2) {
+        public Criteria andSourceNotBetween(Integer value1, Integer value2) {
             addCriterion("`source` not between", value1, value2, "source");
             return (Criteria) this;
         }
@@ -445,52 +445,52 @@ public class UserPointLogExample {
             return (Criteria) this;
         }
 
-        public Criteria andChangePintEqualTo(Short value) {
+        public Criteria andChangePintEqualTo(Integer value) {
             addCriterion("`change_pint` =", value, "changePint");
             return (Criteria) this;
         }
 
-        public Criteria andChangePintNotEqualTo(Short value) {
+        public Criteria andChangePintNotEqualTo(Integer value) {
             addCriterion("`change_pint` <>", value, "changePint");
             return (Criteria) this;
         }
 
-        public Criteria andChangePintGreaterThan(Short value) {
+        public Criteria andChangePintGreaterThan(Integer value) {
             addCriterion("`change_pint` >", value, "changePint");
             return (Criteria) this;
         }
 
-        public Criteria andChangePintGreaterThanOrEqualTo(Short value) {
+        public Criteria andChangePintGreaterThanOrEqualTo(Integer value) {
             addCriterion("`change_pint` >=", value, "changePint");
             return (Criteria) this;
         }
 
-        public Criteria andChangePintLessThan(Short value) {
+        public Criteria andChangePintLessThan(Integer value) {
             addCriterion("`change_pint` <", value, "changePint");
             return (Criteria) this;
         }
 
-        public Criteria andChangePintLessThanOrEqualTo(Short value) {
+        public Criteria andChangePintLessThanOrEqualTo(Integer value) {
             addCriterion("`change_pint` <=", value, "changePint");
             return (Criteria) this;
         }
 
-        public Criteria andChangePintIn(List<Short> values) {
+        public Criteria andChangePintIn(List<Integer> values) {
             addCriterion("`change_pint` in", values, "changePint");
             return (Criteria) this;
         }
 
-        public Criteria andChangePintNotIn(List<Short> values) {
+        public Criteria andChangePintNotIn(List<Integer> values) {
             addCriterion("`change_pint` not in", values, "changePint");
             return (Criteria) this;
         }
 
-        public Criteria andChangePintBetween(Short value1, Short value2) {
+        public Criteria andChangePintBetween(Integer value1, Integer value2) {
             addCriterion("`change_pint` between", value1, value2, "changePint");
             return (Criteria) this;
         }
 
-        public Criteria andChangePintNotBetween(Short value1, Short value2) {
+        public Criteria andChangePintNotBetween(Integer value1, Integer value2) {
             addCriterion("`change_pint` not between", value1, value2, "changePint");
             return (Criteria) this;
         }

@@ -48,6 +48,12 @@ public class UserManagerController {
         return userManageService.checkUserLogin(loginName, token, app);
     }
 
+    /**
+     * 退出登录
+     *
+     * @param loginName
+     * @param app
+     */
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public void logout(@NonNull String loginName, @NonNull String app) {
         userManageService.logout(loginName, app);

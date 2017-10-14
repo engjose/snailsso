@@ -1,6 +1,6 @@
 package com.snail.service.impl;
 
-import com.snail.commen.enums.AppLoginEnum;
+import com.snail.common.enums.AppLoginEnum;
 import com.snail.pojo.form.UserForm;
 import com.snail.service.base.ILoginService;
 import com.snail.util.IPUtil;

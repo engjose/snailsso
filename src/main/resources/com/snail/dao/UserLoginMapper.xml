@@ -11,7 +11,7 @@
       <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="login_name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="password" jdbcType="CHAR" javaType="java.lang.String" />
-      <arg column="user_status" jdbcType="TINYINT" javaType="java.lang.Byte" />
+      <arg column="user_status" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
     </constructor>
@@ -160,7 +160,7 @@
         #{password,jdbcType=CHAR},
       </if>
       <if test="userStatus != null" >
-        #{userStatus,jdbcType=TINYINT},
+        #{userStatus,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -200,7 +200,7 @@
         `password` = #{record.password,jdbcType=CHAR},
       </if>
       <if test="record.userStatus != null" >
-        `user_status` = #{record.userStatus,jdbcType=TINYINT},
+        `user_status` = #{record.userStatus,jdbcType=INTEGER},
       </if>
       <if test="record.createTime != null" >
         `create_time` = #{record.createTime,jdbcType=TIMESTAMP},
@@ -223,7 +223,7 @@
       `user_id` = #{record.userId,jdbcType=INTEGER},
       `login_name` = #{record.loginName,jdbcType=VARCHAR},
       `password` = #{record.password,jdbcType=CHAR},
-      `user_status` = #{record.userStatus,jdbcType=TINYINT},
+      `user_status` = #{record.userStatus,jdbcType=INTEGER},
       `create_time` = #{record.createTime,jdbcType=TIMESTAMP},
       `update_time` = #{record.updateTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
@@ -247,7 +247,7 @@
         `password` = #{password,jdbcType=CHAR},
       </if>
       <if test="userStatus != null" >
-        `user_status` = #{userStatus,jdbcType=TINYINT},
+        `user_status` = #{userStatus,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         `create_time` = #{createTime,jdbcType=TIMESTAMP},

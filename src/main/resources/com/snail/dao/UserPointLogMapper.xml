@@ -9,9 +9,9 @@
     <constructor >
       <idArg column="point_log_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="source" jdbcType="TINYINT" javaType="java.lang.Byte" />
+      <arg column="source" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="trans_serial" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="change_pint" jdbcType="SMALLINT" javaType="java.lang.Short" />
+      <arg column="change_pint" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="app" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -159,13 +159,13 @@
         #{userId,jdbcType=INTEGER},
       </if>
       <if test="source != null" >
-        #{source,jdbcType=TINYINT},
+        #{source,jdbcType=INTEGER},
       </if>
       <if test="transSerial != null" >
         #{transSerial,jdbcType=INTEGER},
       </if>
       <if test="changePint != null" >
-        #{changePint,jdbcType=SMALLINT},
+        #{changePint,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
@@ -202,13 +202,13 @@
         `user_id` = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.source != null" >
-        `source` = #{record.source,jdbcType=TINYINT},
+        `source` = #{record.source,jdbcType=INTEGER},
       </if>
       <if test="record.transSerial != null" >
         `trans_serial` = #{record.transSerial,jdbcType=INTEGER},
       </if>
       <if test="record.changePint != null" >
-        `change_pint` = #{record.changePint,jdbcType=SMALLINT},
+        `change_pint` = #{record.changePint,jdbcType=INTEGER},
       </if>
       <if test="record.createTime != null" >
         `create_time` = #{record.createTime,jdbcType=TIMESTAMP},
@@ -232,9 +232,9 @@
     update `user_point_log`
     set `point_log_id` = #{record.pointLogId,jdbcType=INTEGER},
       `user_id` = #{record.userId,jdbcType=INTEGER},
-      `source` = #{record.source,jdbcType=TINYINT},
+      `source` = #{record.source,jdbcType=INTEGER},
       `trans_serial` = #{record.transSerial,jdbcType=INTEGER},
-      `change_pint` = #{record.changePint,jdbcType=SMALLINT},
+      `change_pint` = #{record.changePint,jdbcType=INTEGER},
       `create_time` = #{record.createTime,jdbcType=TIMESTAMP},
       `update_time` = #{record.updateTime,jdbcType=TIMESTAMP},
       `app` = #{record.app,jdbcType=VARCHAR}
@@ -253,13 +253,13 @@
         `user_id` = #{userId,jdbcType=INTEGER},
       </if>
       <if test="source != null" >
-        `source` = #{source,jdbcType=TINYINT},
+        `source` = #{source,jdbcType=INTEGER},
       </if>
       <if test="transSerial != null" >
         `trans_serial` = #{transSerial,jdbcType=INTEGER},
       </if>
       <if test="changePint != null" >
-        `change_pint` = #{changePint,jdbcType=SMALLINT},
+        `change_pint` = #{changePint,jdbcType=INTEGER},
       </if>
       <if test="createTime != null" >
         `create_time` = #{createTime,jdbcType=TIMESTAMP},

@@ -336,52 +336,52 @@ public class UserExample {
             return (Criteria) this;
         }
 
-        public Criteria andIdentityCardTypeEqualTo(Byte value) {
+        public Criteria andIdentityCardTypeEqualTo(Integer value) {
             addCriterion("`identity_card_type` =", value, "identityCardType");
             return (Criteria) this;
         }
 
-        public Criteria andIdentityCardTypeNotEqualTo(Byte value) {
+        public Criteria andIdentityCardTypeNotEqualTo(Integer value) {
             addCriterion("`identity_card_type` <>", value, "identityCardType");
             return (Criteria) this;
         }
 
-        public Criteria andIdentityCardTypeGreaterThan(Byte value) {
+        public Criteria andIdentityCardTypeGreaterThan(Integer value) {
             addCriterion("`identity_card_type` >", value, "identityCardType");
             return (Criteria) this;
         }
 
-        public Criteria andIdentityCardTypeGreaterThanOrEqualTo(Byte value) {
+        public Criteria andIdentityCardTypeGreaterThanOrEqualTo(Integer value) {
             addCriterion("`identity_card_type` >=", value, "identityCardType");
             return (Criteria) this;
         }
 
-        public Criteria andIdentityCardTypeLessThan(Byte value) {
+        public Criteria andIdentityCardTypeLessThan(Integer value) {
             addCriterion("`identity_card_type` <", value, "identityCardType");
             return (Criteria) this;
         }
 
-        public Criteria andIdentityCardTypeLessThanOrEqualTo(Byte value) {
+        public Criteria andIdentityCardTypeLessThanOrEqualTo(Integer value) {
             addCriterion("`identity_card_type` <=", value, "identityCardType");
             return (Criteria) this;
         }
 
-        public Criteria andIdentityCardTypeIn(List<Byte> values) {
+        public Criteria andIdentityCardTypeIn(List<Integer> values) {
             addCriterion("`identity_card_type` in", values, "identityCardType");
             return (Criteria) this;
         }
 
-        public Criteria andIdentityCardTypeNotIn(List<Byte> values) {
+        public Criteria andIdentityCardTypeNotIn(List<Integer> values) {
             addCriterion("`identity_card_type` not in", values, "identityCardType");
             return (Criteria) this;
         }
 
-        public Criteria andIdentityCardTypeBetween(Byte value1, Byte value2) {
+        public Criteria andIdentityCardTypeBetween(Integer value1, Integer value2) {
             addCriterion("`identity_card_type` between", value1, value2, "identityCardType");
             return (Criteria) this;
         }
 
-        public Criteria andIdentityCardTypeNotBetween(Byte value1, Byte value2) {
+        public Criteria andIdentityCardTypeNotBetween(Integer value1, Integer value2) {
             addCriterion("`identity_card_type` not between", value1, value2, "identityCardType");
             return (Criteria) this;
         }
@@ -466,52 +466,62 @@ public class UserExample {
             return (Criteria) this;
         }
 
-        public Criteria andMobileEqualTo(Integer value) {
+        public Criteria andMobileEqualTo(String value) {
             addCriterion("`mobile` =", value, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileNotEqualTo(Integer value) {
+        public Criteria andMobileNotEqualTo(String value) {
             addCriterion("`mobile` <>", value, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileGreaterThan(Integer value) {
+        public Criteria andMobileGreaterThan(String value) {
             addCriterion("`mobile` >", value, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileGreaterThanOrEqualTo(Integer value) {
+        public Criteria andMobileGreaterThanOrEqualTo(String value) {
             addCriterion("`mobile` >=", value, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileLessThan(Integer value) {
+        public Criteria andMobileLessThan(String value) {
             addCriterion("`mobile` <", value, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileLessThanOrEqualTo(Integer value) {
+        public Criteria andMobileLessThanOrEqualTo(String value) {
             addCriterion("`mobile` <=", value, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileIn(List<Integer> values) {
+        public Criteria andMobileLike(String value) {
+            addCriterion("`mobile` like", value, "mobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andMobileNotLike(String value) {
+            addCriterion("`mobile` not like", value, "mobile");
+            return (Criteria) this;
+        }
+
+        public Criteria andMobileIn(List<String> values) {
             addCriterion("`mobile` in", values, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileNotIn(List<Integer> values) {
+        public Criteria andMobileNotIn(List<String> values) {
             addCriterion("`mobile` not in", values, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileBetween(Integer value1, Integer value2) {
+        public Criteria andMobileBetween(String value1, String value2) {
             addCriterion("`mobile` between", value1, value2, "mobile");
             return (Criteria) this;
         }
 
-        public Criteria andMobileNotBetween(Integer value1, Integer value2) {
+        public Criteria andMobileNotBetween(String value1, String value2) {
             addCriterion("`mobile` not between", value1, value2, "mobile");
             return (Criteria) this;
         }
@@ -846,52 +856,52 @@ public class UserExample {
             return (Criteria) this;
         }
 
-        public Criteria andUserLevelEqualTo(Byte value) {
+        public Criteria andUserLevelEqualTo(Integer value) {
             addCriterion("`user_level` =", value, "userLevel");
             return (Criteria) this;
         }
 
-        public Criteria andUserLevelNotEqualTo(Byte value) {
+        public Criteria andUserLevelNotEqualTo(Integer value) {
             addCriterion("`user_level` <>", value, "userLevel");
             return (Criteria) this;
         }
 
-        public Criteria andUserLevelGreaterThan(Byte value) {
+        public Criteria andUserLevelGreaterThan(Integer value) {
             addCriterion("`user_level` >", value, "userLevel");
             return (Criteria) this;
         }
 
-        public Criteria andUserLevelGreaterThanOrEqualTo(Byte value) {
+        public Criteria andUserLevelGreaterThanOrEqualTo(Integer value) {
             addCriterion("`user_level` >=", value, "userLevel");
             return (Criteria) this;
         }
 
-        public Criteria andUserLevelLessThan(Byte value) {
+        public Criteria andUserLevelLessThan(Integer value) {
             addCriterion("`user_level` <", value, "userLevel");
             return (Criteria) this;
         }
 
-        public Criteria andUserLevelLessThanOrEqualTo(Byte value) {
+        public Criteria andUserLevelLessThanOrEqualTo(Integer value) {
             addCriterion("`user_level` <=", value, "userLevel");
             return (Criteria) this;
         }
 
-        public Criteria andUserLevelIn(List<Byte> values) {
+        public Criteria andUserLevelIn(List<Integer> values) {
             addCriterion("`user_level` in", values, "userLevel");
             return (Criteria) this;
         }
 
-        public Criteria andUserLevelNotIn(List<Byte> values) {
+        public Criteria andUserLevelNotIn(List<Integer> values) {
             addCriterion("`user_level` not in", values, "userLevel");
             return (Criteria) this;
         }
 
-        public Criteria andUserLevelBetween(Byte value1, Byte value2) {
+        public Criteria andUserLevelBetween(Integer value1, Integer value2) {
             addCriterion("`user_level` between", value1, value2, "userLevel");
             return (Criteria) this;
         }
 
-        public Criteria andUserLevelNotBetween(Byte value1, Byte value2) {
+        public Criteria andUserLevelNotBetween(Integer value1, Integer value2) {
             addCriterion("`user_level` not between", value1, value2, "userLevel");
             return (Criteria) this;
         }

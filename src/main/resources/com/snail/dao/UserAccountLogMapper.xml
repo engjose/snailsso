@@ -9,8 +9,8 @@
     <constructor >
       <idArg column="account_log_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="source" jdbcType="TINYINT" javaType="java.lang.Byte" />
-      <arg column="trans_serial" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="source" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="trans_serial" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="amount" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
       <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
@@ -154,10 +154,10 @@
         #{userId,jdbcType=INTEGER},
       </if>
       <if test="source != null" >
-        #{source,jdbcType=TINYINT},
+        #{source,jdbcType=INTEGER},
       </if>
       <if test="transSerial != null" >
-        #{transSerial,jdbcType=INTEGER},
+        #{transSerial,jdbcType=VARCHAR},
       </if>
       <if test="amount != null" >
         #{amount,jdbcType=DECIMAL},
@@ -194,10 +194,10 @@
         `user_id` = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.source != null" >
-        `source` = #{record.source,jdbcType=TINYINT},
+        `source` = #{record.source,jdbcType=INTEGER},
       </if>
       <if test="record.transSerial != null" >
-        `trans_serial` = #{record.transSerial,jdbcType=INTEGER},
+        `trans_serial` = #{record.transSerial,jdbcType=VARCHAR},
       </if>
       <if test="record.amount != null" >
         `amount` = #{record.amount,jdbcType=DECIMAL},
@@ -221,8 +221,8 @@
     update `user_account_log`
     set `account_log_id` = #{record.accountLogId,jdbcType=INTEGER},
       `user_id` = #{record.userId,jdbcType=INTEGER},
-      `source` = #{record.source,jdbcType=TINYINT},
-      `trans_serial` = #{record.transSerial,jdbcType=INTEGER},
+      `source` = #{record.source,jdbcType=INTEGER},
+      `trans_serial` = #{record.transSerial,jdbcType=VARCHAR},
       `amount` = #{record.amount,jdbcType=DECIMAL},
       `create_time` = #{record.createTime,jdbcType=TIMESTAMP},
       `update_time` = #{record.updateTime,jdbcType=TIMESTAMP}
@@ -241,10 +241,10 @@
         `user_id` = #{userId,jdbcType=INTEGER},
       </if>
       <if test="source != null" >
-        `source` = #{source,jdbcType=TINYINT},
+        `source` = #{source,jdbcType=INTEGER},
       </if>
       <if test="transSerial != null" >
-        `trans_serial` = #{transSerial,jdbcType=INTEGER},
+        `trans_serial` = #{transSerial,jdbcType=VARCHAR},
       </if>
       <if test="amount != null" >
         `amount` = #{amount,jdbcType=DECIMAL},

@@ -326,52 +326,52 @@ public class UserAccountLogExample {
             return (Criteria) this;
         }
 
-        public Criteria andSourceEqualTo(Byte value) {
+        public Criteria andSourceEqualTo(Integer value) {
             addCriterion("`source` =", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceNotEqualTo(Byte value) {
+        public Criteria andSourceNotEqualTo(Integer value) {
             addCriterion("`source` <>", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceGreaterThan(Byte value) {
+        public Criteria andSourceGreaterThan(Integer value) {
             addCriterion("`source` >", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceGreaterThanOrEqualTo(Byte value) {
+        public Criteria andSourceGreaterThanOrEqualTo(Integer value) {
             addCriterion("`source` >=", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceLessThan(Byte value) {
+        public Criteria andSourceLessThan(Integer value) {
             addCriterion("`source` <", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceLessThanOrEqualTo(Byte value) {
+        public Criteria andSourceLessThanOrEqualTo(Integer value) {
             addCriterion("`source` <=", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceIn(List<Byte> values) {
+        public Criteria andSourceIn(List<Integer> values) {
             addCriterion("`source` in", values, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceNotIn(List<Byte> values) {
+        public Criteria andSourceNotIn(List<Integer> values) {
             addCriterion("`source` not in", values, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceBetween(Byte value1, Byte value2) {
+        public Criteria andSourceBetween(Integer value1, Integer value2) {
             addCriterion("`source` between", value1, value2, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceNotBetween(Byte value1, Byte value2) {
+        public Criteria andSourceNotBetween(Integer value1, Integer value2) {
             addCriterion("`source` not between", value1, value2, "source");
             return (Criteria) this;
         }
@@ -386,52 +386,62 @@ public class UserAccountLogExample {
             return (Criteria) this;
         }
 
-        public Criteria andTransSerialEqualTo(Integer value) {
+        public Criteria andTransSerialEqualTo(String value) {
             addCriterion("`trans_serial` =", value, "transSerial");
             return (Criteria) this;
         }
 
-        public Criteria andTransSerialNotEqualTo(Integer value) {
+        public Criteria andTransSerialNotEqualTo(String value) {
             addCriterion("`trans_serial` <>", value, "transSerial");
             return (Criteria) this;
         }
 
-        public Criteria andTransSerialGreaterThan(Integer value) {
+        public Criteria andTransSerialGreaterThan(String value) {
             addCriterion("`trans_serial` >", value, "transSerial");
             return (Criteria) this;
         }
 
-        public Criteria andTransSerialGreaterThanOrEqualTo(Integer value) {
+        public Criteria andTransSerialGreaterThanOrEqualTo(String value) {
             addCriterion("`trans_serial` >=", value, "transSerial");
             return (Criteria) this;
         }
 
-        public Criteria andTransSerialLessThan(Integer value) {
+        public Criteria andTransSerialLessThan(String value) {
             addCriterion("`trans_serial` <", value, "transSerial");
             return (Criteria) this;
         }
 
-        public Criteria andTransSerialLessThanOrEqualTo(Integer value) {
+        public Criteria andTransSerialLessThanOrEqualTo(String value) {
             addCriterion("`trans_serial` <=", value, "transSerial");
             return (Criteria) this;
         }
 
-        public Criteria andTransSerialIn(List<Integer> values) {
+        public Criteria andTransSerialLike(String value) {
+            addCriterion("`trans_serial` like", value, "transSerial");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransSerialNotLike(String value) {
+            addCriterion("`trans_serial` not like", value, "transSerial");
+            return (Criteria) this;
+        }
+
+        public Criteria andTransSerialIn(List<String> values) {
             addCriterion("`trans_serial` in", values, "transSerial");
             return (Criteria) this;
         }
 
-        public Criteria andTransSerialNotIn(List<Integer> values) {
+        public Criteria andTransSerialNotIn(List<String> values) {
             addCriterion("`trans_serial` not in", values, "transSerial");
             return (Criteria) this;
         }
 
-        public Criteria andTransSerialBetween(Integer value1, Integer value2) {
+        public Criteria andTransSerialBetween(String value1, String value2) {
             addCriterion("`trans_serial` between", value1, value2, "transSerial");
             return (Criteria) this;
         }
 
-        public Criteria andTransSerialNotBetween(Integer value1, Integer value2) {
+        public Criteria andTransSerialNotBetween(String value1, String value2) {
             addCriterion("`trans_serial` not between", value1, value2, "transSerial");
             return (Criteria) this;
         }

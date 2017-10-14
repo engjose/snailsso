@@ -51,7 +51,7 @@ public interface UserAccountLogMapper {
         "`amount`, `create_time`, ",
         "`update_time`)",
         "values (#{accountLogId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, ",
-        "#{source,jdbcType=TINYINT}, #{transSerial,jdbcType=INTEGER}, ",
+        "#{source,jdbcType=INTEGER}, #{transSerial,jdbcType=VARCHAR}, ",
         "#{amount,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, ",
         "#{updateTime,jdbcType=TIMESTAMP})"
     })
@@ -122,8 +122,8 @@ public interface UserAccountLogMapper {
     @Update({
         "update `user_account_log`",
         "set `user_id` = #{userId,jdbcType=INTEGER},",
-          "`source` = #{source,jdbcType=TINYINT},",
-          "`trans_serial` = #{transSerial,jdbcType=INTEGER},",
+          "`source` = #{source,jdbcType=INTEGER},",
+          "`trans_serial` = #{transSerial,jdbcType=VARCHAR},",
           "`amount` = #{amount,jdbcType=DECIMAL},",
           "`create_time` = #{createTime,jdbcType=TIMESTAMP},",
           "`update_time` = #{updateTime,jdbcType=TIMESTAMP}",
