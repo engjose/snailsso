@@ -44,7 +44,7 @@ public class FTPUtil {
      */
     public static boolean uploadFile(List<File> files) {
         FTPUtil ftpUtil = new FTPUtil(FTP_IP, FTP_PORT, FTP_USERNAME, FTP_PASSWORD);
-        boolean result = ftpUtil.uploadFile("image", files);
+        boolean result = ftpUtil.uploadFile("img/snail_admin", files);
         return  result;
     }
 
