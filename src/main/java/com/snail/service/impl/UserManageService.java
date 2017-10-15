@@ -1,12 +1,27 @@
 package com.snail.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.snail.common.enums.AppLoginEnum;
+import com.snail.dao.EmployeeMapper;
+import com.snail.pojo.domain.Employee;
+import com.snail.pojo.domain.EmployeeExample;
+import com.snail.pojo.form.EmployeeForm;
 import com.snail.pojo.form.UserForm;
+import com.snail.pojo.vo.EmployeeInfoVo;
 import com.snail.service.base.ILoginService;
+import com.snail.service.base.IUserManagerService;
 import com.snail.util.IPUtil;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.ContextLoader;
 import org.springframework.web.context.WebApplicationContext;
@@ -18,7 +33,10 @@ import org.springframework.web.context.WebApplicationContext;
  */
 @Service
 @Slf4j
-public class UserManageService {
+public class UserManageService implements IUserManagerService{
+
+    @Autowired
+    private EmployeeMapper employeeMapper;
 
     /**
      * 用户登录
@@ -56,4 +74,47 @@ public class UserManageService {
         ILoginService loginService = (ILoginService) webApplicationContext.getBean(AppLoginEnum.valueOf(app).getImplClass());
         loginService.logout(loginName, app);
     }
+
+    /**
+     * @see com.snail.service.base.IUserManagerService#listEmployees(EmployeeForm)
+     * @return 用户列表
+     */
+    @Override
+    public Map<String, Object> listEmployees(EmployeeForm form) {
+        EmployeeExample example = new EmployeeExample();
+        EmployeeExample.Criteria criteria = example.createCriteria();
+        // 根据用户真实姓名模糊查询
+        if (StringUtils.isNotBlank(form.getName())) {
+            criteria.andNameLike(form.getName());
+        }
+        // 根据手机号码精确查询
+        if (form.getMobile() != null) {
+            criteria.andMobileEqualTo(form.getMobile());
+        }
+        // 根据用户登录名进行模糊查询
+        if (StringUtils.isNotBlank(form.getLoginName())) {
+            criteria.andLoginNameEqualTo(form.getLoginName());
+        }
+        // 设置分页查询
+        PageHelper.startPage(form.getPageNo(), form.getPageSize());
+        List<Employee> employeeList = employeeMapper.selectByExample(example);
+        PageInfo<Employee> pageInfo = new PageInfo<Employee>(employeeList);
+
+        // 封装数据
+        List<Employee> employees = pageInfo.getList();
+        List<EmployeeInfoVo> employeeInfoVos = new ArrayList<EmployeeInfoVo>();
+        for (Employee employee : employees) {
+            EmployeeInfoVo employeeInfoVo = new EmployeeInfoVo();
+            BeanUtils.copyProperties(employee,employeeInfoVo);
+            employeeInfoVos.add(employeeInfoVo);
+        }
+
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        resultMap.put("totals", pageInfo.getTotal());
+        resultMap.put("data", employeeInfoVos);
+        return resultMap;
+    }
+
+
+
 }
