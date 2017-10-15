@@ -6,7 +6,8 @@ import com.snail.common.enums.AppLoginEnum;
 import com.snail.dao.EmployeeMapper;
 import com.snail.pojo.domain.Employee;
 import com.snail.pojo.domain.EmployeeExample;
-import com.snail.pojo.form.EmployeeForm;
+import com.snail.pojo.form.EmployeeInsertForm;
+import com.snail.pojo.form.EmployeeQueryForm;
 import com.snail.pojo.form.UserForm;
 import com.snail.pojo.vo.EmployeeInfoVo;
 import com.snail.service.base.ILoginService;
@@ -76,11 +77,11 @@ public class UserManageService implements IUserManagerService{
     }
 
     /**
-     * @see com.snail.service.base.IUserManagerService#listEmployees(EmployeeForm)
+     * @see com.snail.service.base.IUserManagerService#listEmployees(EmployeeQueryForm)
      * @return 用户列表
      */
     @Override
-    public Map<String, Object> listEmployees(EmployeeForm form) {
+    public Map<String, Object> listEmployees(EmployeeQueryForm form) {
         EmployeeExample example = new EmployeeExample();
         EmployeeExample.Criteria criteria = example.createCriteria();
         // 根据用户真实姓名模糊查询
@@ -115,6 +116,28 @@ public class UserManageService implements IUserManagerService{
         return resultMap;
     }
 
+    /**
+     * @see com.snail.service.base.IUserManagerService#getEmployeeById(Integer)
+     * @param id 用户ID
+     * @return 用户详情对象
+     */
+    @Override
+    public Employee getEmployeeById(Integer id) {
+        EmployeeExample example = new EmployeeExample();
+        example.createCriteria().andStatusEqualTo(1).andEmployeeIdEqualTo(id);
+        return employeeMapper.selectByExample(example).get(0);
+    }
+
+    /**
+     * @see com.snail.service.base.IUserManagerService#insertEmployee(EmployeeInsertForm)
+     * @param form 用户信息
+     */
+    @Override
+    public void insertEmployee(EmployeeInsertForm form) {
+        Employee employee = new Employee();
+        BeanUtils.copyProperties(form, employee);
+        employeeMapper.insert(employee);
+    }
 
 
 }

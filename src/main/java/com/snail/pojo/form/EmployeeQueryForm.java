@@ -5,7 +5,7 @@ package com.snail.pojo.form;
  *
  * Created by Panyuanyuan on 2017/10/13.
  */
-public class EmployeeForm {
+public class EmployeeQueryForm {
 
     /** 手机号 */
     private String mobile;
