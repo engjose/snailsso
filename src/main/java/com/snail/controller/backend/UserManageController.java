@@ -74,6 +74,7 @@ public class UserManageController {
     public ResultMap uploadImg(MultipartFile file) {
 
 
-        FTPUtil.uploadFile(file);
+       // FTPUtil.uploadFile(file);
+        return null;
     }
 }
