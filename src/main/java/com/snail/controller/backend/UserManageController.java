@@ -1,19 +1,13 @@
 package com.snail.controller.backend;
 
-import com.snail.common.constants.ResponseCode;
-import com.snail.common.constants.ResultMap;
 import com.snail.pojo.form.EmployeeForm;
-import com.snail.pojo.vo.EmployeeInfoVo;
 import com.snail.service.base.IUserManagerService;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletResponse;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 用户管理,包括员工管理Controller
