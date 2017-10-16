@@ -1,9 +1,13 @@
 package com.snail.service.impl;
 
 import com.google.common.collect.Lists;
-import com.snail.service.base.IFileUploadService;
+import com.snail.service.base.IFileService;
 import com.snail.util.FTPUtil;
 import com.snail.util.PropertiesUtil;
+import java.util.Date;
+import org.apache.commons.lang3.time.DateFormatUtils;
+import org.apache.commons.lang3.time.DateUtils;
+import org.joda.time.format.DateTimeFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -18,8 +22,8 @@ import java.util.UUID;
  * @since v1.0
  */
 @Service
-public class FileUploadService implements IFileUploadService {
-    private static final Logger logger = LoggerFactory.getLogger(FileUploadService.class);
+public class FileServiceImpl implements IFileService {
+    private static final Logger logger = LoggerFactory.getLogger(FileServiceImpl.class);
 
     /**
      * 文件上传
@@ -32,7 +36,9 @@ public class FileUploadService implements IFileUploadService {
     public String uploadFile(MultipartFile file, String path) {
         String fileName = file.getOriginalFilename();
         String fileExtention = fileName.substring(fileName.lastIndexOf(".") + 1);
-        String uploadFileName = new StringBuilder().append(UUID.randomUUID().toString()).append(".").append(fileExtention).toString();
+        String fileNamePrefix = DateFormatUtils.format(new Date(), "yyyyMMdd");
+        String newFileName = UUID.randomUUID().toString().replace("-", "");
+        String uploadFileName = new StringBuilder().append(fileNamePrefix).append(newFileName).append(".").append(fileExtention).toString();
         File targetFile = new File(path, uploadFileName);
 
         File fileDir = new File(path);

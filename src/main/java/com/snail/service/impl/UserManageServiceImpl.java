@@ -31,7 +31,7 @@ import org.springframework.web.context.WebApplicationContext;
  */
 @Service
 @Slf4j
-public class UserManageService implements IUserManagerService{
+public class UserManageServiceImpl implements IUserManagerService{
 
     @Autowired
     private EmployeeMapper employeeMapper;
