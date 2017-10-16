@@ -5,12 +5,11 @@ import com.snail.common.constants.ResultMap;
 import com.snail.pojo.domain.Employee;
 import com.snail.pojo.form.EmployeeInsertForm;
 import com.snail.pojo.form.EmployeeQueryForm;
-import com.snail.service.base.IFileUploadService;
+import com.snail.service.base.IFileService;
 import com.snail.service.base.IUserManagerService;
 import java.util.Map;
 
-import com.snail.util.FTPUtil;
-import com.sun.org.apache.regexp.internal.RE;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,7 +29,7 @@ public class UserManageController {
     private IUserManagerService iUserManagerService;
 
     @Autowired
-    private IFileUploadService iFileUploadService;
+    private IFileService iFileUploadService;
 
     /**
      * 查询员工列表
@@ -76,8 +75,8 @@ public class UserManageController {
      * @return 文件所在ftp服务器的URL
      */
     @CrossOrigin
-    @PostMapping("/employees/uploadImg")
-    public ResultMap uploadImg(MultipartFile file, HttpServletRequest request) {
+    @PostMapping("/uploadImg")
+    public ResultMap uploadImg(@NonNull MultipartFile file, HttpServletRequest request) {
         String path = request.getServletContext().getRealPath("/upload");
         String url = iFileUploadService.uploadFile(file, path);
         return ResultMap.getResultMap(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getDescription(), url);

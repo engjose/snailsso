@@ -1,6 +1,5 @@
 package com.snail.pojo.form;
 
-import com.sun.istack.internal.NotNull;
 import lombok.NonNull;
 
 /**
@@ -15,7 +14,7 @@ public class UserForm {
     private String loginName;
 
     /** 用户登录密码 */
-    @NotNull
+    @NonNull
     private String password;
 
     /** 用户操作application */
