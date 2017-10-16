@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @RequestMapping(value = "/employee")
+@CrossOrigin
 public class UserManageController {
 
     @Autowired
@@ -37,7 +38,6 @@ public class UserManageController {
      * @param form 查询条件
      * @return 返回结果
      */
-    @CrossOrigin
     @GetMapping(value = "/employees")
     public Map<String, Object> getEmployees(EmployeeQueryForm form) {
         return iUserManagerService.listEmployees(form);
@@ -49,7 +49,6 @@ public class UserManageController {
      * @param id 用户ID
      * @return 响应结果
      */
-    @CrossOrigin
     @GetMapping(value = "/employees/{id}")
     public ResultMap getEmployeeDetails(@PathVariable Integer id) {
         Employee employee = iUserManagerService.getEmployeeById(id);
@@ -62,7 +61,6 @@ public class UserManageController {
      * @param form 用户信息
      * @return 响应结果
      */
-    @CrossOrigin
     @PostMapping("/employees")
     public ResultMap insert(@RequestBody EmployeeInsertForm form) {
         iUserManagerService.insertEmployee(form);
@@ -74,7 +72,6 @@ public class UserManageController {
      *
      * @return 文件所在ftp服务器的URL
      */
-    @CrossOrigin
     @PostMapping("/uploadImg")
     public ResultMap uploadImg(@NonNull MultipartFile file, HttpServletRequest request) {
         String path = request.getServletContext().getRealPath("/upload");
