@@ -57,13 +57,6 @@ public class FileServiceImpl implements IFileService {
         } catch (Exception e) {
             logger.error("upload file to upload server err");
         }
-<<<<<<< HEAD:src/main/java/com/snail/service/impl/FileUploadService.java
-        String ftp = targetFile.getAbsolutePath();
-        // TODO 修复文件上传路径bug
-        System.out.println(ftp + "===" + targetFile.getName() + "===" + targetFile.getPath());
-        return targetFile.getName();
-=======
         return PropertiesUtil.getProperty("ftp.server.http.prefix") + targetFile.getName();
->>>>>>> dev:src/main/java/com/snail/service/impl/FileServiceImpl.java
     }
 }
