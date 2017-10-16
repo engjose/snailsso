@@ -28,7 +28,7 @@ import redis.clients.jedis.Jedis;
  */
 @Service
 @Slf4j
-public class WebLoginService extends AbstractLoginService {
+public class WebLoginServiceImpl extends AbstractLoginService {
 
     /** 登录过期时间, 默认为30分钟,单位为秒 */
     private static final Integer userExpiredTime = 30 * 60;
