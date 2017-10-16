@@ -5,6 +5,7 @@ import com.snail.common.constants.ResultMap;
 import com.snail.pojo.domain.Employee;
 import com.snail.pojo.form.EmployeeInsertForm;
 import com.snail.pojo.form.EmployeeQueryForm;
+import com.snail.service.base.IFileUploadService;
 import com.snail.service.base.IUserManagerService;
 import java.util.Map;
 
@@ -13,6 +14,8 @@ import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 用户管理,包括员工管理Controller
@@ -25,6 +28,9 @@ public class UserManageController {
 
     @Autowired
     private IUserManagerService iUserManagerService;
+
+    @Autowired
+    private IFileUploadService iFileUploadService;
 
     /**
      * 查询员工列表
@@ -59,7 +65,7 @@ public class UserManageController {
      */
     @CrossOrigin
     @PostMapping("/employees")
-    public ResultMap insert(EmployeeInsertForm form) {
+    public ResultMap insert(@RequestBody EmployeeInsertForm form) {
         iUserManagerService.insertEmployee(form);
         return ResultMap.getResultMap(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getDescription());
     }
@@ -71,10 +77,9 @@ public class UserManageController {
      */
     @CrossOrigin
     @PostMapping("/employees/uploadImg")
-    public ResultMap uploadImg(MultipartFile file) {
-
-
-       // FTPUtil.uploadFile(file);
-        return null;
+    public ResultMap uploadImg(MultipartFile file, HttpServletRequest request) {
+        String path = request.getServletContext().getRealPath("/upload");
+        String url = iFileUploadService.uploadFile(file, path);
+        return ResultMap.getResultMap(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getDescription(), url);
     }
 }

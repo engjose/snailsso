@@ -14,10 +14,7 @@ import com.snail.service.base.ILoginService;
 import com.snail.service.base.IUserManagerService;
 import com.snail.util.IPUtil;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -125,7 +122,9 @@ public class UserManageService implements IUserManagerService{
     public Employee getEmployeeById(Integer id) {
         EmployeeExample example = new EmployeeExample();
         example.createCriteria().andStatusEqualTo(1).andEmployeeIdEqualTo(id);
-        return employeeMapper.selectByExample(example).get(0);
+        Employee employee = employeeMapper.selectByExample(example).get(0);
+        employee.setPassword(null);
+        return employee;
     }
 
     /**
@@ -136,6 +135,11 @@ public class UserManageService implements IUserManagerService{
     public void insertEmployee(EmployeeInsertForm form) {
         Employee employee = new Employee();
         BeanUtils.copyProperties(form, employee);
+        Date date = new Date();
+        employee.setUpdateTime(date);
+        employee.setCreateTime(date);
+        // 1:有效；0:无效
+        employee.setStatus(1);
         employeeMapper.insert(employee);
     }
 
