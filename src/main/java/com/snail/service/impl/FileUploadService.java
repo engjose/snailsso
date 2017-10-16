@@ -3,6 +3,7 @@ package com.snail.service.impl;
 import com.google.common.collect.Lists;
 import com.snail.service.base.IFileUploadService;
 import com.snail.util.FTPUtil;
+import com.snail.util.PropertiesUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,6 @@ import java.util.UUID;
  */
 @Service
 public class FileUploadService implements IFileUploadService {
-
     private static final Logger logger = LoggerFactory.getLogger(FileUploadService.class);
 
     /**
@@ -51,8 +51,6 @@ public class FileUploadService implements IFileUploadService {
         } catch (Exception e) {
             logger.error("upload file to upload server err");
         }
-        String ftp = targetFile.getAbsolutePath();
-        System.out.println(ftp + "===" + targetFile.getName() + "===" + targetFile.getPath());
-        return targetFile.getName();
+        return PropertiesUtil.getProperty("ftp.server.http.prefix") + targetFile.getName();
     }
 }

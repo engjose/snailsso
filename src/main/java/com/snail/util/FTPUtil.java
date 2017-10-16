@@ -22,6 +22,7 @@ public class FTPUtil {
     private static final String FTP_IP = PropertiesUtil.getProperty("ftp.server.ip");
     private static final String FTP_USERNAME = PropertiesUtil.getProperty("ftp.user");
     private static final String FTP_PASSWORD = PropertiesUtil.getProperty("ftp.pass");
+    private static final String REMOTE_PATH = PropertiesUtil.getProperty("ftp.path");
 
     private String ip;
     private int port;
@@ -44,7 +45,7 @@ public class FTPUtil {
      */
     public static boolean uploadFile(List<File> files) {
         FTPUtil ftpUtil = new FTPUtil(FTP_IP, FTP_PORT, FTP_USERNAME, FTP_PASSWORD);
-        boolean result = ftpUtil.uploadFile("img/snail_admin", files);
+        boolean result = ftpUtil.uploadFile(REMOTE_PATH, files);
         return  result;
     }
 

@@ -11,6 +11,7 @@ import java.util.Map;
 
 import com.snail.util.FTPUtil;
 import com.sun.org.apache.regexp.internal.RE;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -77,7 +78,7 @@ public class UserManageController {
      */
     @CrossOrigin
     @PostMapping("/employees/uploadImg")
-    public ResultMap uploadImg(MultipartFile file, HttpServletRequest request) {
+    public ResultMap uploadImg(@NonNull MultipartFile file, HttpServletRequest request) {
         String path = request.getServletContext().getRealPath("/upload");
         String url = iFileUploadService.uploadFile(file, path);
         return ResultMap.getResultMap(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getDescription(), url);
