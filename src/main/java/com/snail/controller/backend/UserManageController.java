@@ -22,9 +22,9 @@ import javax.servlet.http.HttpServletRequest;
  *
  * Created by Panyuanyuan on 2017/10/13.
  */
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping(value = "/employee")
-@CrossOrigin
 public class UserManageController {
 
     @Autowired
