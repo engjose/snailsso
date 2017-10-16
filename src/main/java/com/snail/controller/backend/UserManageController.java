@@ -7,6 +7,7 @@ import com.snail.pojo.form.EmployeeInsertForm;
 import com.snail.pojo.form.EmployeeQueryForm;
 import com.snail.service.base.IFileService;
 import com.snail.service.base.IUserManagerService;
+import com.snail.service.impl.UserManageServiceImpl;
 import java.util.Map;
 
 import lombok.NonNull;
@@ -27,7 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 public class UserManageController {
 
     @Autowired
-    private IUserManagerService iUserManagerService;
+    private UserManageServiceImpl userManageService; //线上bug ,先剔除接口
 
     @Autowired
     private IFileService iFileUploadService;
@@ -40,7 +41,7 @@ public class UserManageController {
      */
     @GetMapping(value = "/employees")
     public Map<String, Object> getEmployees(EmployeeQueryForm form) {
-        return iUserManagerService.listEmployees(form);
+        return userManageService.listEmployees(form);
     }
 
     /**
@@ -51,7 +52,7 @@ public class UserManageController {
      */
     @GetMapping(value = "/employees/{id}")
     public ResultMap getEmployeeDetails(@PathVariable Integer id) {
-        Employee employee = iUserManagerService.getEmployeeById(id);
+        Employee employee = userManageService.getEmployeeById(id);
         return ResultMap.getResultMap(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getDescription(), employee);
     }
 
@@ -63,7 +64,7 @@ public class UserManageController {
      */
     @PostMapping("/employees")
     public ResultMap insert(@RequestBody EmployeeInsertForm form) {
-        iUserManagerService.insertEmployee(form);
+        userManageService.insertEmployee(form);
         return ResultMap.getResultMap(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getDescription());
     }
 
