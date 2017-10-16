@@ -52,6 +52,7 @@ public class FileUploadService implements IFileUploadService {
             logger.error("upload file to upload server err");
         }
         String ftp = targetFile.getAbsolutePath();
+        // TODO 修复文件上传路径bug
         System.out.println(ftp + "===" + targetFile.getName() + "===" + targetFile.getPath());
         return targetFile.getName();
     }
