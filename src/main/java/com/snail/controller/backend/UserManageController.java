@@ -39,7 +39,7 @@ public class UserManageController {
      * @return 返回结果
      */
     @GetMapping(value = "/employees")
-    public Map<String, Object> getEmployees(EmployeeQueryForm form) {
+    public Map<String, Object> getEmployees(EmployeeQueryForm form, String mobile) {
         return iUserManagerService.listEmployees(form);
     }
 

@@ -83,15 +83,15 @@ public class UserManageServiceImpl implements IUserManagerService{
         EmployeeExample.Criteria criteria = example.createCriteria();
         // 根据用户真实姓名模糊查询
         if (StringUtils.isNotBlank(form.getName())) {
-            criteria.andNameLike(form.getName());
+            criteria.andNameLike("%" + form.getName() + "%");
         }
         // 根据手机号码精确查询
-        if (form.getMobile() != null) {
+        if (StringUtils.isNotBlank(form.getMobile())) {
             criteria.andMobileEqualTo(form.getMobile());
         }
         // 根据用户登录名进行模糊查询
         if (StringUtils.isNotBlank(form.getLoginName())) {
-            criteria.andLoginNameEqualTo(form.getLoginName());
+            criteria.andLoginNameLike("%" + form.getLoginName() + "%");
         }
         // 设置分页查询
         PageHelper.startPage(form.getPageNo(), form.getPageSize());
