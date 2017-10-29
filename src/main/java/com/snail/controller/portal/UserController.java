@@ -1,5 +1,6 @@
 package com.snail.controller.portal;
 
+import com.snail.common.constants.ResultMap;
 import com.snail.pojo.form.UserForm;
 import com.snail.service.impl.UserManageServiceImpl;
 import java.util.Map;

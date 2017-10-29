@@ -57,12 +57,12 @@
             <property name="rootInterface" value=""/>
 
         </javaClientGenerator>
-        <table tableName="employee" delimitIdentifiers="true" delimitAllColumns="true"></table>
+        <!--<table tableName="employee" delimitIdentifiers="true" delimitAllColumns="true"></table>-->
         <!--<table tableName="user_account_log" delimitIdentifiers="true" delimitAllColumns="true"></table>-->
         <!--<table tableName="user_level" delimitIdentifiers="true" delimitAllColumns="true"></table>-->
-        <table tableName="user_login" delimitIdentifiers="true" delimitAllColumns="true"></table>
+        <!--<table tableName="user_login" delimitIdentifiers="true" delimitAllColumns="true"></table>-->
         <table tableName="user_login_log" delimitIdentifiers="true" delimitAllColumns="true"></table>
         <!--<table tableName="user_point_log" delimitIdentifiers="true" delimitAllColumns="true"></table>-->
-        <table tableName="user" delimitIdentifiers="true" delimitAllColumns="true"></table>
+        <!--<table tableName="user" delimitIdentifiers="true" delimitAllColumns="true"></table>-->
     </context>
 </generatorConfiguration>
