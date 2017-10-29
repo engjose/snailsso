@@ -7,19 +7,18 @@ package com.snail.common.enums;
  */
 public enum AppLoginEnum {
 
-    QQ("QQ", "qqLoginService"),
-    WEI_XIN("WEI_XIN", "weiXinLoginService"),
-    WEB("WEB", "webLoginService");
+    SNAIL_WEB("WEB", "官网登录"),
+    SNAIL_ADMIN("SNAIL_ADMIN", "管理平台登录");
 
     /** 应用类型 */
     private String app;
 
     /** 实现类 */
-    private String implClass;
+    private String desc;
 
-    AppLoginEnum(String app, String implClass) {
+    AppLoginEnum(String app, String desc) {
         this.app = app;
-        this.implClass = implClass;
+        this.desc = desc;
     }
 
     public String getApp() {
@@ -27,6 +26,6 @@ public enum AppLoginEnum {
     }
 
     public String getImplClass() {
-        return implClass;
+        return desc;
     }
 }

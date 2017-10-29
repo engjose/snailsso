@@ -2,10 +2,6 @@ package com.snail.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.snail.common.enums.AppLoginEnum;
-import com.snail.dao.EmployeeMapper;
-import com.snail.pojo.domain.Employee;
-import com.snail.pojo.domain.EmployeeExample;
 import com.snail.pojo.form.EmployeeInsertForm;
 import com.snail.pojo.form.EmployeeQueryForm;
 import com.snail.pojo.form.UserForm;
@@ -21,8 +17,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.ContextLoader;
-import org.springframework.web.context.WebApplicationContext;
 
 /**
  * 用户管理Service
@@ -36,41 +30,37 @@ public class UserManageServiceImpl implements IUserManagerService{
     @Autowired
     private EmployeeMapper employeeMapper;
 
+    @Autowired
+    private ILoginService iLoginService;
+
     /**
      * 用户登录
      *
      * @param form
      */
     public Map<String, Object> login(UserForm form, HttpServletRequest request) {
-        WebApplicationContext webApplicationContext = ContextLoader.getCurrentWebApplicationContext();
-        ILoginService loginService = (ILoginService) webApplicationContext.getBean(AppLoginEnum.valueOf(form.getApp()).getImplClass());
-        return loginService.login(form.getLoginName(), form.getPassword(), IPUtil.getIpAddr(request));
+        return iLoginService.login(form, IPUtil.getIpAddr(request));
     }
 
     /**
      * 检测用户是否登录某个应用
      *
      * @param loginName
-     * @param token
      * @param app
      * @return
      */
-    public Boolean checkUserLogin(String loginName, String token, String app) {
-        WebApplicationContext webApplicationContext = ContextLoader.getCurrentWebApplicationContext();
-        ILoginService loginService = (ILoginService) webApplicationContext.getBean(AppLoginEnum.valueOf(app).getImplClass());
-        return loginService.checkUserLogin(loginName, token, app);
+    public Boolean checkUserLogin(String loginName, String xToken, String app) {
+        return iLoginService.checkUserLogin(loginName, xToken);
     }
 
     /**
-     * 用户退出登录
+     * 用户登出
      *
-     * @param loginName
+     * @param xToken
      * @param app
      */
-    public void logout(String loginName, String app) {
-        WebApplicationContext webApplicationContext = ContextLoader.getCurrentWebApplicationContext();
-        ILoginService loginService = (ILoginService) webApplicationContext.getBean(AppLoginEnum.valueOf(app).getImplClass());
-        loginService.logout(loginName, app);
+    public void logout(String xToken, String app) {
+        iLoginService.logout(xToken, app);
     }
 
     /**

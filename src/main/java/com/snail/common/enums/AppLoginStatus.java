@@ -5,8 +5,9 @@ package com.snail.common.enums;
  */
 public enum AppLoginStatus {
 
-    SUCCESS("SUCCESS", "登录成功", 1),
-    FAILED("FAILED", "用户名或密码错误!", 0);
+    SUCCESS("SUCCESS", "登录成功", 200),
+    FAILED("FAILED", "用户名或密码错误!", 500),
+    FORBIDDEN("FORBIDDEN", "用户已经登录", 403);
 
     private String status;
     private String desc;

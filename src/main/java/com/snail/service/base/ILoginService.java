@@ -1,5 +1,6 @@
 package com.snail.service.base;
 
+import com.snail.pojo.form.UserForm;
 import java.util.Map;
 import lombok.NonNull;
 
@@ -13,22 +14,23 @@ public interface ILoginService {
     /**
      * 用户登录
      *
-     * @param loginName
-     * @param password
+     * @param form
+     * @param ip
+     * @return
      */
-    Map<String, Object> login(@NonNull String loginName, @NonNull String password, String ip);
+    Map<String, Object> login(UserForm form, String ip);
 
     /**
      * 用户登出: 只需要登录名,和app类型
      */
-    void logout(String loginName, String app);
+    void logout(String xToken, String app);
 
     /**
      * 验证用户是否登录
      *
      * @param loginName
-     * @param token
+     * @param app
      * @return
      */
-    Boolean checkUserLogin(@NonNull String loginName, @NonNull String token, String app);
+    Boolean checkUserLogin(@NonNull String loginName, @NonNull String app);
 }
