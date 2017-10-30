@@ -6,7 +6,9 @@ import com.snail.common.enums.AppLoginStatus;
 import com.snail.dao.EmployeeMapper;
 import com.snail.dao.UserLoginLogMapper;
 import com.snail.dao.UserLoginMapper;
+import com.snail.pojo.domain.Employee;
 import com.snail.pojo.domain.EmployeeExample;
+import com.snail.pojo.domain.UserLogin;
 import com.snail.pojo.domain.UserLoginExample;
 import com.snail.pojo.domain.UserLoginLog;
 import com.snail.pojo.form.UserForm;
@@ -67,10 +69,18 @@ public class LoginServiceImpl implements ILoginService {
             return result;
         }
 
+        Integer userId;
+        if(AppLoginEnum.SNAIL_ADMIN.toString().equals(form.getApp())) {
+            Employee employee = (Employee) users.get(0);
+            userId = employee.getId();
+        } else {
+            UserLogin userLogin = (UserLogin) users.get(0);
+            userId = userLogin.getUserId();
+        }
         //保存用户信息到缓存
         String token = UUID.randomUUID().toString();
         Jedis jedis = JedisClientUtil.getJedis();
-        jedis.setex(token, userExpiredTime, loginName);
+        jedis.setex(token, userExpiredTime, loginName + ":" + userId);
         jedis.setex(loginName + ":" + form.getApp(), userExpiredTime, token);
         JedisClientUtil.closeJedis(jedis);
 
