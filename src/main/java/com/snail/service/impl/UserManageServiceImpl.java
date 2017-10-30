@@ -2,6 +2,9 @@ package com.snail.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.snail.dao.EmployeeMapper;
+import com.snail.pojo.domain.Employee;
+import com.snail.pojo.domain.EmployeeExample;
 import com.snail.pojo.form.EmployeeInsertForm;
 import com.snail.pojo.form.EmployeeQueryForm;
 import com.snail.pojo.form.UserForm;
@@ -111,7 +114,7 @@ public class UserManageServiceImpl implements IUserManagerService{
     @Override
     public Employee getEmployeeById(Integer id) {
         EmployeeExample example = new EmployeeExample();
-        example.createCriteria().andStatusEqualTo(1).andEmployeeIdEqualTo(id);
+        example.createCriteria().andStatusEqualTo(1).andIdEqualTo(id);
         Employee employee = employeeMapper.selectByExample(example).get(0);
         employee.setPassword(null);
         return employee;

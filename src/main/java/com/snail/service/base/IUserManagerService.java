@@ -1,5 +1,6 @@
 package com.snail.service.base;
 
+import com.snail.pojo.domain.Employee;
 import com.snail.pojo.form.EmployeeInsertForm;
 import com.snail.pojo.form.EmployeeQueryForm;
 

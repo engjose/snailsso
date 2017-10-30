@@ -2,6 +2,7 @@ package com.snail.controller.backend;
 
 import com.snail.common.constants.ResponseCode;
 import com.snail.common.constants.ResultMap;
+import com.snail.pojo.domain.Employee;
 import com.snail.pojo.form.EmployeeInsertForm;
 import com.snail.pojo.form.EmployeeQueryForm;
 import com.snail.service.base.IFileService;
