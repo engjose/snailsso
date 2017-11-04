@@ -68,7 +68,7 @@ public class UserManageController {
     }
 
     /**
-     * ftp服务器文件上传
+     * 七牛上传文件
      *
      * @return 文件所在ftp服务器的URL
      */

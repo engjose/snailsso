@@ -1,19 +1,15 @@
 package com.snail.service.impl;
 
-import com.google.common.collect.Lists;
+import com.qiniu.api.io.PutRet;
 import com.snail.service.base.IFileService;
-import com.snail.util.FTPUtil;
-import com.snail.util.PropertiesUtil;
+import com.snail.util.QiniuUtil;
+import java.io.File;
 import java.util.Date;
+import java.util.UUID;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DateFormatUtils;
-import org.apache.commons.lang3.time.DateUtils;
-import org.joda.time.format.DateTimeFormat;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import java.io.File;
-import java.util.UUID;
 
 /**
  * @description 文件上传
@@ -22,8 +18,10 @@ import java.util.UUID;
  * @since v1.0
  */
 @Service
+@Slf4j
 public class FileServiceImpl implements IFileService {
-    private static final Logger logger = LoggerFactory.getLogger(FileServiceImpl.class);
+
+    private static final String QINIU_URL_PREFIX = "http://qiniu.thinkerol.com/";
 
     /**
      * 文件上传
@@ -42,21 +40,19 @@ public class FileServiceImpl implements IFileService {
         File targetFile = new File(path, uploadFileName);
 
         File fileDir = new File(path);
+        PutRet putRet = null;
         if(!fileDir.exists()) {
             fileDir.setWritable(true);
             fileDir.mkdirs();
         }
-
         try {
-            //上传到本地服务器
             file.transferTo(targetFile);
-            //上传文件到FTP
-            FTPUtil.uploadFile(Lists.newArrayList(targetFile));
-            //删除本地文件
+            QiniuUtil qiniuUtil = new QiniuUtil();
+            putRet = qiniuUtil.uploadFile(targetFile);
             targetFile.delete();
         } catch (Exception e) {
-            logger.error("upload file to upload server err");
+            log.error("文件上传七牛失败!", e);
         }
-        return PropertiesUtil.getProperty("ftp.server.http.prefix") + targetFile.getName();
+        return  QINIU_URL_PREFIX + putRet.getKey();
     }
 }
