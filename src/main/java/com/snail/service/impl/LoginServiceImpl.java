@@ -50,7 +50,7 @@ public class LoginServiceImpl implements ILoginService {
     public Map<String, Object> login(UserForm form, String ip) {
         String loginName = form.getLoginName();
         String password = form.getPassword();
-        password = MD5Util.MD5EncodeUtf8(password);
+//        password = MD5Util.MD5EncodeUtf8(password);
 
         List users = listUsers(form.getLoginName(), password, form.getApp());
 
@@ -70,9 +70,11 @@ public class LoginServiceImpl implements ILoginService {
         }
 
         Integer userId;
+        String headUrl = null;
         if(AppLoginEnum.SNAIL_ADMIN.toString().equals(form.getApp())) {
             Employee employee = (Employee) users.get(0);
             userId = employee.getId();
+            headUrl = employee.getIconUrl();
         } else {
             UserLogin userLogin = (UserLogin) users.get(0);
             userId = userLogin.getUserId();
@@ -87,6 +89,9 @@ public class LoginServiceImpl implements ILoginService {
         //保存用户登录信息
         insertUserLoginLog(form.getApp(), ip, token, loginName);
 
+        if (headUrl != null) {
+            result.put("headUrl", headUrl);
+        }
         result.put("xToken", token);
         result.put("loginName", form.getLoginName());
         result.put("code", AppLoginStatus.SUCCESS.getCode());

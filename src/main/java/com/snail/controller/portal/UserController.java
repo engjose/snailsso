@@ -1,8 +1,8 @@
 package com.snail.controller.portal;
 
-import com.snail.common.constants.ResultMap;
 import com.snail.pojo.form.UserForm;
 import com.snail.service.impl.UserManageServiceImpl;
+import com.snail.util.QiniuUtil;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import lombok.NonNull;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/snail/web")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired

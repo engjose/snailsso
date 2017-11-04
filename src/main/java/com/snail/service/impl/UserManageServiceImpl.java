@@ -3,8 +3,10 @@ package com.snail.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.snail.dao.EmployeeMapper;
+import com.snail.dao.UserMapper;
 import com.snail.pojo.domain.Employee;
 import com.snail.pojo.domain.EmployeeExample;
+import com.snail.pojo.domain.User;
 import com.snail.pojo.form.EmployeeInsertForm;
 import com.snail.pojo.form.EmployeeQueryForm;
 import com.snail.pojo.form.UserForm;
@@ -12,8 +14,11 @@ import com.snail.pojo.vo.EmployeeInfoVo;
 import com.snail.service.base.ILoginService;
 import com.snail.service.base.IUserManagerService;
 import com.snail.util.IPUtil;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -32,6 +37,9 @@ public class UserManageServiceImpl implements IUserManagerService{
 
     @Autowired
     private EmployeeMapper employeeMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Autowired
     private ILoginService iLoginService;
@@ -113,9 +121,7 @@ public class UserManageServiceImpl implements IUserManagerService{
      */
     @Override
     public Employee getEmployeeById(Integer id) {
-        EmployeeExample example = new EmployeeExample();
-        example.createCriteria().andStatusEqualTo(1).andIdEqualTo(id);
-        Employee employee = employeeMapper.selectByExample(example).get(0);
+        Employee employee = employeeMapper.selectByPrimaryKey(id);
         employee.setPassword(null);
         return employee;
     }
@@ -134,6 +140,11 @@ public class UserManageServiceImpl implements IUserManagerService{
         // 1:有效；0:无效
         employee.setStatus(1);
         employeeMapper.insert(employee);
+    }
+
+    @Override
+    public User getUserInfoById(Integer userId) {
+       return userMapper.selectByPrimaryKey(userId);
     }
 
 
