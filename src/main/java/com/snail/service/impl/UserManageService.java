@@ -19,6 +19,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
+
+import com.snail.util.MD5Util;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -136,6 +138,8 @@ public class UserManageService implements IUserManagerService{
     public void insertEmployee(EmployeeInsertForm form) {
         Employee employee = new Employee();
         BeanUtils.copyProperties(form, employee);
+        String password = MD5Util.MD5EncodeUtf8(form.getPassword());
+        employee.setPassword(password);
         employeeMapper.insert(employee);
     }
 
