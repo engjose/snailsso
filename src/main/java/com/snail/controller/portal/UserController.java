@@ -1,7 +1,7 @@
 package com.snail.controller.portal;
 
 import com.snail.pojo.form.UserForm;
-import com.snail.service.impl.UserManageService;
+import com.snail.service.impl.UserManageServiceImpl;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import lombok.NonNull;
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-    private UserManageService userManageService;
+    private UserManageServiceImpl userManageService;
 
     /**
      * 用户登录

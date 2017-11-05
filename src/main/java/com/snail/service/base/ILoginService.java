@@ -1,6 +1,5 @@
 package com.snail.service.base;
 
-import com.sun.istack.internal.NotNull;
 import java.util.Map;
 import lombok.NonNull;
 
@@ -17,7 +16,7 @@ public interface ILoginService {
      * @param loginName
      * @param password
      */
-    Map<String, Object> login(@NonNull String loginName, @NotNull String password, String ip);
+    Map<String, Object> login(@NonNull String loginName, @NonNull String password, String ip);
 
     /**
      * 用户登出: 只需要登录名,和app类型
@@ -31,5 +30,5 @@ public interface ILoginService {
      * @param token
      * @return
      */
-    Boolean checkUserLogin(@NotNull String loginName, @NotNull String token, String app);
+    Boolean checkUserLogin(@NonNull String loginName, @NonNull String token, String app);
 }
